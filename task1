@@ -1,0 +1,11 @@
+CREATE OR REPLACE PROCEDURE update_salary(
+    p_id IN NUMBER,
+    p_increment IN NUMBER
+) AS
+BEGIN
+    UPDATE employees
+    SET salary = salary + p_increment
+    WHERE emp_id = p_id;
+
+    DBMS_OUTPUT.PUT_LINE('Salary updated for Employee ID: ' || p_id);
+END;
